@@ -18,7 +18,11 @@ var RK10_UNITS = [
     '.us-u{border:1px solid var(--line);border-radius:10px;padding:8px 4px 6px;text-align:center;background:var(--panel);font-size:13px;line-height:1.3}' +
     '.us-u svg{display:block;margin:0 auto 4px;width:44px;height:40px}.us-u b{display:block;font-size:14px}.us-u small{display:block;font-weight:600}' +
     '.us-leg{display:flex;flex-wrap:wrap;gap:12px;font-size:14px}.us-leg i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:5px;vertical-align:-1px}' +
-    '.us-done{font-size:14px;color:var(--muted);margin:0}.us-done b{color:var(--ink)}';
+    '.us-done{font-size:14px;color:var(--muted);margin:0}.us-done b{color:var(--ink)}' +
+    '@keyframes us-blink{0%,100%{opacity:1}50%{opacity:.25}}@keyframes us-glow{0%,100%{box-shadow:0 0 0 0 var(--g)}50%{box-shadow:0 0 0 4px var(--g)}}' +
+    '.us-u{animation:us-glow 1.6s ease-in-out infinite}.us-u small{animation:us-blink 1.2s ease-in-out infinite}.us-u small:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:currentColor;margin-right:4px;vertical-align:1px}' +
+    '.us-u.sold{animation:none}.us-u.sold small{animation:none}' +
+    '@media(prefers-reduced-motion:reduce){.us-u,.us-u small{animation:none}}';
   function house(c) {
     return '<svg viewBox="0 0 44 40" aria-hidden="true"><path d="M4 20 22 5l18 15" fill="none" stroke="' + c + '" stroke-width="3" stroke-linejoin="round"/>' +
       '<rect x="9" y="18" width="26" height="19" rx="2" fill="' + c + '"/><rect x="18" y="25" width="8" height="12" fill="#fff" opacity=".85"/></svg>';
@@ -31,7 +35,7 @@ var RK10_UNITS = [
       ['free', 'hold', 'sold'].map(function (k) { return '<span><i style="background:' + C[k][0] + '"></i>' + C[k][1] + '</span>'; }).join('') +
       '</div><div class="us-grid">' + RK10_UNITS.map(function (u) {
         var c = C[u.s] || C.free;
-        return '<div class="us-u">' + house(c[0]) + '<b>หลัง ' + u.n + '</b>' + u.no + '<small style="color:' + c[0] + '">' + c[2] + '</small></div>';
+        return '<div class="us-u ' + u.s + '" style="--g:' + c[0] + '55;border-color:' + c[0] + '">' + house(c[0]) + '<b>หลัง ' + u.n + '</b>' + u.no + '<small style="color:' + c[0] + '">' + c[2] + '</small></div>';
       }).join('') + '</div>' +
       '<p class="us-done">ว่าง <b>' + free + '</b> จาก 7 หลัง · อัปเดต ' + RK10_UPDATED + '</p>' +
       '<p class="us-done">🏗️ กำหนดเสร็จ<br>• <b>' + RK10_DONE.first + '</b><br>• <b>' + RK10_DONE.all + '</b></p></div>';
