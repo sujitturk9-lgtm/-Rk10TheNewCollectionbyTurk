@@ -40,7 +40,7 @@ button,.btn{font:600 15px var(--fb);border:0;border-radius:10px;padding:11px 16p
 </head>
 <body>
 <div class="wrap">
-  <div class="kicker">TMC prop Real Estate · สำหรับนายหน้า / Co-agent</div>
+  <div class="kicker">สำหรับนายหน้า / Co-agent</div>
   <h1>รัตนากร 10 · The New Collection</h1>
   <div class="muted">ทาวน์เฮาส์ 2 ชั้น 19 ตร.ว. 7 หลัง (แปลง C-3 ถึง C-9) · เนินพลับหวาน – เขาน้อย พัทยา</div>
 
@@ -54,12 +54,11 @@ button,.btn{font:600 15px var(--fb);border:0;border-radius:10px;padding:11px 16p
       <div class="fact">พื้นที่ใช้สอย<b>~147 ตร.ม.</b></div>
       <div class="fact">แถม<b>ชุดเฟอร์นิเจอร์</b></div>
     </div>
-    <p class="note">นัดชมบ้าน / ถามสถานะยูนิต: เติร์ก <a href="tel:0635195664">063-519-5664</a> · LINE <a href="https://line.me/ti/p/~turkturk21" target="_blank" rel="noopener">turkturk21</a></p>
   </div>
 
   <div class="card">
     <h2>1) สร้างลิงก์ของคุณเพื่อส่งลูกค้า</h2>
-    <p class="muted" style="margin:0">ลูกค้าเปิดลิงก์จะเห็นภาพ 4K แปลน โมเดล 3D หมุนดูได้ และปุ่มติดต่อเป็น <b>เบอร์และ LINE ของคุณเอง</b> (ไม่แสดงเบอร์เจ้าของโครงการ)</p>
+    <p class="muted" style="margin:0">ลูกค้าเปิดลิงก์จะเห็นภาพ 4K แปลน โมเดล 3D หมุนดูได้ และปุ่มติดต่อเป็น <b>เบอร์และ LINE ของคุณเอง</b> (ไม่มีข้อมูลติดต่อของเจ้าของโครงการ)</p>
     <label for="n">ชื่อของคุณ / ชื่อบริษัท</label><input id="n" placeholder="เช่น คุณแนน · Nan Property">
     <label for="t">เบอร์โทร</label><input id="t" inputmode="tel" placeholder="เช่น 081-234-5678">
     <label for="l">LINE ID</label><input id="l" placeholder="เช่น nanproperty">
@@ -87,7 +86,7 @@ button,.btn{font:600 15px var(--fb);border:0;border-radius:10px;padding:11px 16p
 </div>
 <script>
 var IMGS = ["00-day-street-angle", "00-dusk-street-angle", "00-front-day", "00-front-night", "01-front-facade", "04-stair-floor1", "05-living-dining", "05b-living-tv", "06-kitchen", "07-master-bedroom", "09-bedroom2", "11-bedroom3", "st-minimal_lux-kitchen", "st-minimal_lux-living", "st-minimal_lux-living2", "st-minimal_lux-master"];
-var base = location.href.replace(/agent\.html.*$/, '');
+var base = location.href.replace(/agent\.html.*$/, '') + 'present.html';
 function link(){var n=document.getElementById('n').value.trim(),t=document.getElementById('t').value.trim(),l=document.getElementById('l').value.trim();
   var q=new URLSearchParams();if(n)q.set('a',n);if(t)q.set('t',t);if(l)q.set('l',l);return base+(q.toString()?'?'+q.toString():'');}
 function caption(u){var n=document.getElementById('n').value.trim(),t=document.getElementById('t').value.trim(),l=document.getElementById('l').value.trim();
