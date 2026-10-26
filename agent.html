@@ -47,7 +47,8 @@ button,.btn{font:600 15px var(--fb);border:0;border-radius:10px;padding:11px 16p
   <div class="card">
     <h2>ข้อมูลขาย</h2>
     <div class="facts">
-      <div class="fact hl">ราคาขาย<b>2,850,000 บาท</b></div>
+      <div class="fact hl">ราคาขาย หลัง 1–6<b>2,850,000 บาท</b></div>
+      <div class="fact hl">หลังริม 7 (160/38)<b>2,950,000 บาท</b></div>
       <div class="fact hl">ค่าคอมนายหน้า<b>3% เต็ม</b></div>
       <div class="fact">ขนาด<b>19 ตร.ว. · 4×19 ม.</b></div>
       <div class="fact">ห้อง<b>3 นอน 3 น้ำ</b></div>
@@ -103,7 +104,7 @@ var base = location.href.replace(/agent\.html.*$/, '') + 'present.html';
 function link(){var n=document.getElementById('n').value.trim(),t=document.getElementById('t').value.trim(),l=document.getElementById('l').value.trim();
   var q=new URLSearchParams();if(n)q.set('a',n);if(t)q.set('t',t);if(l)q.set('l',l);return base+(q.toString()?'?'+q.toString():'');}
 function caption(u){var n=document.getElementById('n').value.trim(),t=document.getElementById('t').value.trim(),l=document.getElementById('l').value.trim();
-  return '🏡 รัตนากร 10 · The New Collection\nทาวน์เฮาส์ 2 ชั้น 19 ตร.ว. ทำเลเนินพลับหวาน – เขาน้อย พัทยา\n\n✅ 3 ห้องนอน 3 ห้องน้ำ · หน้ากว้าง 4 ม.\n✅ พื้นที่ใช้สอยประมาณ 147 ตร.ม. · จอดรถ 1 คัน\n✅ รีโนเวทใหม่ทั้งหลัง พื้นแกรนิตโต้ 60×60\n✅ แถมชุดเฟอร์นิเจอร์\n🏗️ 2–3 หลังแรกเสร็จประมาณปลาย ธ.ค. 69 ครบทุกหลังปลาย ก.พ. 70\n\n💰 ราคา 2,850,000 บาท\n\n👉 ดูภาพ 4K แปลน และโมเดล 3D หมุนดูได้: '+u+'\n📍 พิกัด: https://maps.app.goo.gl/iCGDFk4vJwv6sBCC7\n\n📞 สนใจนัดชม: '+(n||'')+(t?' โทร '+t:'')+(l?' · LINE '+l:'');}
+  return '🏡 รัตนากร 10 · The New Collection\nทาวน์เฮาส์ 2 ชั้น 19 ตร.ว. ทำเลเนินพลับหวาน – เขาน้อย พัทยา\n\n✅ 3 ห้องนอน 3 ห้องน้ำ · หน้ากว้าง 4 ม.\n✅ พื้นที่ใช้สอยประมาณ 147 ตร.ม. · จอดรถ 1 คัน\n✅ รีโนเวทใหม่ทั้งหลัง พื้นแกรนิตโต้ 60×60\n✅ แถมชุดเฟอร์นิเจอร์\n🏗️ 2–3 หลังแรกเสร็จประมาณปลาย ธ.ค. 69 ครบทุกหลังปลาย ก.พ. 70\n\n💰 ราคา 2,850,000 บาท (หลังริม 2,950,000 บาท)\n\n👉 ดูภาพ 4K แปลน และโมเดล 3D หมุนดูได้: '+u+'\n📍 พิกัด: https://maps.app.goo.gl/iCGDFk4vJwv6sBCC7\n\n📞 สนใจนัดชม: '+(n||'')+(t?' โทร '+t:'')+(l?' · LINE '+l:'');}
 function upd(){var u=link();document.getElementById('out').textContent=u;document.getElementById('pv').href=u;
   document.getElementById('lineShare').href='https://line.me/R/share?text='+encodeURIComponent('ดูบ้านรัตนากร 10 The New Collection (ภาพ 4K + โมเดล 3D): '+u);
   document.getElementById('cap').value=caption(u);}

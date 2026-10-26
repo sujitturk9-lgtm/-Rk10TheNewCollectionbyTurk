@@ -2,6 +2,7 @@
 // s: 'free' = ว่างพร้อมขาย (เขียว) · 'hold' = ติดจอง (เหลือง) · 'sold' = ขายออก (แดง)
 var RK10_UPDATED = '27 ต.ค. 2569';
 var RK10_DONE = { first: '2–3 หลังแรก เสร็จประมาณ ปลาย ธ.ค. 2569 (2 เดือน)', all: 'ครบทั้ง 7 หลัง เสร็จประมาณ ปลาย ก.พ. 2570 (4 เดือน)' };
+var RK10_PRICE = '2,850,000';
 var RK10_UNITS = [
   { n: 1, no: '160/32', s: 'free' },
   { n: 2, no: '160/33', s: 'free' },
@@ -9,7 +10,7 @@ var RK10_UNITS = [
   { n: 4, no: '160/35', s: 'free' },
   { n: 5, no: '160/36', s: 'free' },
   { n: 6, no: '160/37', s: 'free' },
-  { n: 7, no: '160/38', s: 'free' }
+  { n: 7, no: '160/38', s: 'free', p: '2,950,000', tag: 'หลังริม' }
 ];
 (function () {
   var C = { free: ['#1f9d55', 'ว่าง พร้อมขาย', 'ว่าง'], hold: ['#e0a800', 'ติดจอง', 'ติดจอง'], sold: ['#d93025', 'ขายออก', 'ขายแล้ว'] };
@@ -18,7 +19,7 @@ var RK10_UNITS = [
     '.us-u{border:1px solid var(--line);border-radius:10px;padding:8px 4px 6px;text-align:center;background:var(--panel);font-size:13px;line-height:1.3}' +
     '.us-u svg{display:block;margin:0 auto 4px;width:44px;height:40px}.us-u b{display:block;font-size:14px}.us-u small{display:block;font-weight:600}' +
     '.us-leg{display:flex;flex-wrap:wrap;gap:12px;font-size:14px}.us-leg i{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:5px;vertical-align:-1px}' +
-    '.us-done{font-size:14px;color:var(--muted);margin:0}.us-done b{color:var(--ink)}' +
+    '.us-p{display:block;font-size:11.5px;color:var(--muted)}.us-done{font-size:14px;color:var(--muted);margin:0}.us-done b{color:var(--ink)}' +
     '@keyframes us-blink{0%,100%{opacity:1}50%{opacity:.25}}@keyframes us-glow{0%,100%{box-shadow:0 0 0 0 var(--g)}50%{box-shadow:0 0 0 4px var(--g)}}' +
     '.us-u{animation:us-glow 1.6s ease-in-out infinite}.us-u small{animation:us-blink 1.2s ease-in-out infinite}.us-u small:before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:currentColor;margin-right:4px;vertical-align:1px}' +
     '.us-u.sold{animation:none}.us-u.sold small{animation:none}' +
@@ -35,7 +36,7 @@ var RK10_UNITS = [
       ['free', 'hold', 'sold'].map(function (k) { return '<span><i style="background:' + C[k][0] + '"></i>' + C[k][1] + '</span>'; }).join('') +
       '</div><div class="us-grid">' + RK10_UNITS.map(function (u) {
         var c = C[u.s] || C.free;
-        return '<div class="us-u ' + u.s + '" style="--g:' + c[0] + '55;border-color:' + c[0] + '">' + house(c[0]) + '<b>หลัง ' + u.n + '</b>' + u.no + '<small style="color:' + c[0] + '">' + c[2] + '</small></div>';
+        return '<div class="us-u ' + u.s + '" style="--g:' + c[0] + '55;border-color:' + c[0] + '">' + house(c[0]) + '<b>หลัง ' + u.n + '</b>' + u.no + '<span class="us-p">' + (u.tag ? u.tag + ' · ' : '') + (u.p || RK10_PRICE) + '</span><small style="color:' + c[0] + '">' + c[2] + '</small></div>';
       }).join('') + '</div>' +
       '<p class="us-done">ว่าง <b>' + free + '</b> จาก 7 หลัง · อัปเดต ' + RK10_UPDATED + '</p>' +
       '<p class="us-done">🏗️ กำหนดเสร็จ<br>• <b>' + RK10_DONE.first + '</b><br>• <b>' + RK10_DONE.all + '</b></p></div>';
