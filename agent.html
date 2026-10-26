@@ -79,7 +79,13 @@ button,.btn{font:600 15px var(--fb);border:0;border-radius:10px;padding:11px 16p
   </div>
 
   <div class="card">
-    <h2>3) ภาพ 4K สำหรับโพสต์</h2>
+    <h2>3) ภาพโครงการสำหรับโพสต์</h2>
+    <p class="muted" style="margin-top:0">แตะภาพเพื่อเปิดขนาดเต็ม แล้วกดค้างเพื่อบันทึก (มือถือ) หรือคลิกขวา → บันทึกรูป (คอม)</p>
+    <div class="imgs" id="pimgs"></div>
+  </div>
+
+  <div class="card">
+    <h2>4) ภาพ 4K สำหรับโพสต์</h2>
     <p class="muted" style="margin-top:0">แตะภาพเพื่อเปิดขนาดเต็ม แล้วกดค้างเพื่อบันทึก (มือถือ) หรือคลิกขวา → บันทึกรูป (คอม)</p>
     <div class="imgs" id="imgs"></div>
   </div>
@@ -103,6 +109,8 @@ document.getElementById('cp').onclick=function(){copy(link(),this)};
 document.getElementById('cpc').onclick=function(){copy(document.getElementById('cap').value,this)};
 var g=document.getElementById('imgs');IMGS.forEach(function(f){var a=document.createElement('a');a.href='renders/4k/'+f+'.jpg';a.target='_blank';a.rel='noopener';
   a.innerHTML='<img loading="lazy" src="renders/lx-'+f+'.jpg" alt="'+f+'">';g.appendChild(a)});
+var pg=document.getElementById('pimgs');["p01", "p02", "p03", "p04", "p05", "p06", "p07", "p08", "p09", "p10"].forEach(function(f){var a=document.createElement('a');a.href='renders/proj/'+f+'.jpg';a.target='_blank';a.rel='noopener';
+  a.innerHTML='<img loading="lazy" src="renders/proj/t-'+f+'.jpg" alt="ภาพโครงการ">';pg.appendChild(a)});
 upd();
 </script>
 </body>

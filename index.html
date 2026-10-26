@@ -87,6 +87,11 @@ td:last-child{text-align:right;font-family:var(--f-mono);font-size:13px;white-sp
 .skpload button{font:inherit;font-weight:600;background:#2c6a80;color:#fff;border:0;border-radius:10px;padding:12px 18px;cursor:pointer}
 .skpload p{margin:8px 0 0;font-size:13px;color:#3d4a50}
 @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.pcard{display:block;position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--panel);text-decoration:none;color:var(--ink)}
+.pcard img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover}
+.pgrid.site .pcard img{aspect-ratio:4/5}
+.pcard span{display:block;padding:8px 10px;font-size:14px}
 
 .spec.price{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .spec.price b{color:inherit}
@@ -122,6 +127,31 @@ body{padding-bottom:76px}
     <h2>ภาพเหมือนจริง</h2>
     <a class="ghero" href="#" data-i="0"><img style="aspect-ratio:5/2" src="renders/lx-00-front-night.jpg" alt="หน้าบ้านยามค่ำ ทาวน์เฮาส์ 7 หลังเรียงกัน"></a>
     <div class="ggrid" id="ggrid"></div>
+  </section>
+
+
+  <section class="gallery" aria-label="ภาพโครงการ" id="project">
+    <h2>ภาพโครงการ</h2>
+    <div class="pgrid">
+      <a class="pcard" href="renders/proj/p01.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-p01.jpg" alt="หน้าโครงการยามค่ำ มุมถนน"><span>หน้าโครงการยามค่ำ มุมถนน</span></a>
+      <a class="pcard" href="renders/proj/p02.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-p02.jpg" alt="หน้าบ้าน 7 หลัง ยามค่ำ"><span>หน้าบ้าน 7 หลัง ยามค่ำ</span></a>
+      <a class="pcard" href="renders/proj/p03.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-p03.jpg" alt="หน้าบ้าน 7 หลัง กลางวัน"><span>หน้าบ้าน 7 หลัง กลางวัน</span></a>
+      <a class="pcard" href="renders/proj/p04.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-p04.jpg" alt="หน้าบ้าน กลางวัน"><span>หน้าบ้าน กลางวัน</span></a>
+      <a class="pcard" href="renders/proj/p05.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-p05.jpg" alt="หน้าบ้าน ยามเย็น"><span>หน้าบ้าน ยามเย็น</span></a>
+      <a class="pcard" href="renders/proj/p06.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-p06.jpg" alt="โรงจอดรถ ฝ้าลายไม้"><span>โรงจอดรถ ฝ้าลายไม้</span></a>
+      <a class="pcard" href="renders/proj/p07.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-p07.jpg" alt="มองออกจากโรงจอดรถ"><span>มองออกจากโรงจอดรถ</span></a>
+      <a class="pcard" href="renders/proj/p08.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-p08.jpg" alt="ห้องนั่งเล่น ผนังทีวีหินอ่อน"><span>ห้องนั่งเล่น ผนังทีวีหินอ่อน</span></a>
+      <a class="pcard" href="renders/proj/p09.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-p09.jpg" alt="นั่งเล่นต่อห้องทานข้าวและครัว"><span>นั่งเล่นต่อห้องทานข้าวและครัว</span></a>
+      <a class="pcard" href="renders/proj/p10.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-p10.jpg" alt="โต๊ะทานข้าวหินอ่อน"><span>โต๊ะทานข้าวหินอ่อน</span></a>
+    </div>
+    <h2 style="margin-top:8px">หน้างานจริงตอนนี้ · ระหว่างรีโนเวท</h2>
+    <p class="hint" style="margin:0">ภาพถ่ายจริงจากหน้างาน ตุลาคม 2569 · ภาพด้านบนเป็นภาพตัวอย่างหลังรีโนเวทเสร็จ</p>
+    <div class="pgrid site">
+      <a class="pcard" href="renders/proj/s01.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-s01.jpg" alt="หน้างานจริง ทั้งแถว"><span>หน้างานจริง ทั้งแถว</span></a>
+      <a class="pcard" href="renders/proj/s02.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-s02.jpg" alt="ระหว่างรีโนเวท ชั้นล่าง"><span>ระหว่างรีโนเวท ชั้นล่าง</span></a>
+      <a class="pcard" href="renders/proj/s03.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-s03.jpg" alt="ข้างอาคาร"><span>ข้างอาคาร</span></a>
+      <a class="pcard" href="renders/proj/s04.jpg" target="_blank" rel="noopener"><img loading="lazy" src="renders/proj/t-s04.jpg" alt="หน้างานจริง มุมถนน"><span>หน้างานจริง มุมถนน</span></a>
+    </div>
   </section>
 
   <section class="gallery" aria-label="สไตล์ตกแต่งให้เลือก">
