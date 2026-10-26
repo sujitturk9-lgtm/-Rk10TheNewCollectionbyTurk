@@ -93,6 +93,9 @@ td:last-child{text-align:right;font-family:var(--f-mono);font-size:13px;white-sp
 .pcard img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover}
 .pgrid.site .pcard img{aspect-ratio:4/5}
 .pcard span{display:block;padding:8px 10px;font-size:14px}
+.loc{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:space-between;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.loc p{margin:2px 0 0;color:var(--muted);font-size:15px}
+.navbtn{display:inline-flex;align-items:center;gap:8px;background:#1a73e8;color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:10px}
 
 .spec.price{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 .spec.price b{color:inherit}
@@ -118,7 +121,7 @@ body{padding-bottom:76px}
       <span class="spec">หน้ากว้าง <b>4.00</b> × ลึก <b>19.00</b> ม.</span>
       <span class="spec">จอดรถ <b>1</b> คัน</span>
       <span class="spec price">ราคา <b>2,850,000</b> บาท · แถมเฟอร์นิเจอร์</span>
-      <span class="spec">ทำเล <b>เนินพลับหวาน – เขาน้อย</b> พัทยา</span>
+      <a class="spec" href="#location" style="text-decoration:none;color:inherit">📍 ทำเล <b>เนินพลับหวาน – เขาน้อย</b> พัทยา</a>
       <span class="spec">พื้นที่ใช้สอยประมาณ <b>147</b> ตร.ม.</span>
     </div>
   </header>
@@ -130,6 +133,14 @@ body{padding-bottom:76px}
     <div class="ggrid" id="ggrid"></div>
   </section>
 
+
+  <section class="gallery" aria-label="ที่ตั้งโครงการ" id="location">
+    <h2>ที่ตั้งโครงการ</h2>
+    <div class="loc">
+      <div><b>รัตนากร 10 · The New Collection</b><p>เนินพลับหวาน – เขาน้อย หนองปรือ พัทยา</p></div>
+      <a class="navbtn" href="https://maps.app.goo.gl/iCGDFk4vJwv6sBCC7" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>นำทางด้วย Google Maps</a>
+    </div>
+  </section>
 
   <section class="gallery" aria-label="ภาพโครงการ" id="project">
     <h2>ภาพโครงการ</h2>
