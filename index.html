@@ -88,6 +88,9 @@ td:last-child{text-align:right;font-family:var(--f-mono);font-size:13px;white-sp
 .skpload p{margin:8px 0 0;font-size:13px;color:#3d4a50}
 @media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
 
+.spec.price{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.spec.price b{color:inherit}
+.agentbar{font:500 14px var(--f-body);color:var(--muted);text-align:center;margin:-4px 0 6px}
 .sub{font-family:var(--f-body);color:var(--muted);margin:-4px 0 12px;font-size:15px}
 .contact{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:8px;justify-content:center;padding:10px max(16px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--panel) 92%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--line)}
 .contact a{flex:1;max-width:220px;text-align:center;font:600 15px var(--f-body);text-decoration:none;padding:11px 12px;border-radius:10px}
@@ -108,6 +111,8 @@ body{padding-bottom:76px}
       <span class="spec"><b>3</b> ห้องน้ำ</span>
       <span class="spec">หน้ากว้าง <b>4.00</b> × ลึก <b>19.00</b> ม.</span>
       <span class="spec">จอดรถ <b>1</b> คัน</span>
+      <span class="spec price">ราคา <b>2,850,000</b> บาท · แถมเฟอร์นิเจอร์</span>
+      <span class="spec">ทำเล <b>เนินพลับหวาน – เขาน้อย</b> พัทยา</span>
       <span class="spec">พื้นที่ใช้สอยประมาณ <b>147</b> ตร.ม.</span>
     </div>
   </header>
@@ -629,6 +634,17 @@ try{if(location.hash==='#sketchup'){setTimeout(()=>document.getElementById('sket
 })();
 </script>
 
+
+<script>
+// Agent links: index.html?a=<name>&t=<phone>&l=<LINE id> shows the agent's own contact instead of TMC's
+document.addEventListener('DOMContentLoaded',function(){try{var q=new URLSearchParams(location.search),a=q.get('a'),t=q.get('t'),l=q.get('l');if(!a&&!t&&!l)return;
+var nav=document.querySelector('.contact');if(!nav)return;var tel=(t||'').replace(/[^0-9+]/g,'');nav.innerHTML='';
+var cap=document.createElement('div');cap.className='agentbar';cap.textContent='สอบถาม/นัดชมบ้าน: '+(a||'ตัวแทนขาย');nav.style.flexWrap='wrap';
+cap.style.flexBasis='100%';nav.appendChild(cap);
+if(tel){var c=document.createElement('a');c.className='call';c.href='tel:'+tel;c.textContent='โทร '+t;nav.appendChild(c);}
+if(l){var x=document.createElement('a');x.className='line';x.href='https://line.me/ti/p/~'+encodeURIComponent(l.replace(/^@/,''));x.target='_blank';x.rel='noopener';x.textContent='LINE '+l;nav.appendChild(x);}
+var k=document.querySelector('.kicker');if(k)k.style.display='none';document.body.style.paddingBottom='110px';}catch(e){}});
+</script>
 
 <nav class="contact" aria-label="ติดต่อ TMC">
   <a class="call" href="tel:0635195664">โทร 063-519-5664</a>
